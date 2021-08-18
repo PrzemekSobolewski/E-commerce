@@ -1,27 +1,28 @@
-import React from 'react';
+import React, {useState, useEffect, Dispatch, SetStateAction} from 'react';
 import { Grid, Flex } from './style';
 import Product from '../Product/index';
+import { commerce } from '../../lib/commerce';
 
-const products = [
-  {
-    id: 1,
-    name: 'Razer Mouse',
-    description: 'Razor Mouse for gamers',
-    price: 199.2
-  },
-  {
-    id: 2,
-    name: 'Razer Keyboard',
-    description: 'Razor Mouse for gamers',
-    price: 199.2
-  }
-];
+const ProductList: React.FC = () => {
+    const [products, setProducts] = useState<any>([]);
 
-const ProductList = () => {
+    const fetchProducts = async () => {
+        const { data } = await commerce.products.list();
+
+        setProducts(data)
+    }
+
+    useEffect(() => {
+        fetchProducts();
+    },[])
+
+    useEffect(() => {
+        console.log(products);
+    },[products])
   return (
     <>
-      <Grid gap={4}>
-        {products.map((product) => (
+      <Grid gap={24}>
+        {products.map((product: Product) => (
           <Flex key={product.id} padding={16} shadow={true}>
             <Product product={product} />
           </Flex>

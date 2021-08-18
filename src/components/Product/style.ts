@@ -13,6 +13,7 @@ const ProductHeader = styled.div`
   align-items: center;
   justify-content: space-between;
   font-weight: bold;
+  width: 100%;
 `;
 
 const Name = styled.h5`
@@ -29,6 +30,8 @@ const Description = styled.p`
   color: #222222;
   font-size: 14px;
   font-weight: normal;
+  text-align: left;
+  width: 100%;
 `;
 
 export { ProductHeader, Name, Price, Description };

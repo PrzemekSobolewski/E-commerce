@@ -12,16 +12,18 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: ${(p: Props) => (p.gap ? p.gap : 0)}px;
+  justify-content: center;
 `;
 
 const Flex = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   padding: ${(p: Props) => (p.padding ? p.padding : 8)}px;
   box-shadow: ${(p: Props) =>
     p.shadow
-      ? '0 10px 16px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%)'
+      ? '0 10px 16px 0 rgb(0 0 0 / 0%), 0 6px 20px 0 rgb(0 0 0 / 10%)'
       : 'none'};
 `;
 

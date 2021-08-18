@@ -1,8 +1,13 @@
 import React from 'react';
-import './App.css';
 import ProductList from './components/ProductsList';
+import { Container } from './style';
+
 function App() {
-  return <ProductList />;
+  return (
+    <Container>
+      <ProductList />
+    </Container>
+  );
 }
 
 export default App;
