@@ -8,6 +8,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path:path.resolve(__dirname, "dist"),
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -39,6 +40,9 @@ module.exports = {
         use: ['@svgr/webpack'],
       },
     ]
+  },
+  devServer: {
+    historyApiFallback: true
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
