@@ -49,7 +49,7 @@ const ProductPage: React.FC<Props> = (props) => {
             <Description
               dangerouslySetInnerHTML={{ __html: product.description }}
             />
-            <AddToCartBtn>Dodaj do koszyka</AddToCartBtn>
+            <AddToCartBtn onClick={() => props.handleAddToCart(product.id, 1)}>Dodaj do koszyka</AddToCartBtn>
           </Content>
         </ProductContainer>
       ) : null}
