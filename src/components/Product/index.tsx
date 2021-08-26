@@ -5,10 +5,10 @@ import {
   Price,
   Description,
   ImageCont,
-  ProductImage
+  ProductImage,
+  ProductLink
 } from './style';
 import { priceFormatter } from '../../shared/Formatter';
-import { Link } from 'react-router-dom';
 
 interface Product {
   id: number;
@@ -25,7 +25,7 @@ interface Props {
 
 const Product: React.FC<Props> = ({ product }) => {
   return (
-    <Link to={`/product/${product.permalink}`}>
+    <ProductLink to={`/product/${product.permalink}`}>
       <ImageCont width={100} height={300}>
         <ProductImage title={product.name} src={product.media.source} />
       </ImageCont>
@@ -37,7 +37,7 @@ const Product: React.FC<Props> = ({ product }) => {
       <Description
         dangerouslySetInnerHTML={{ __html: product.description }}
       ></Description>
-    </Link>
+    </ProductLink>
   );
 };
 

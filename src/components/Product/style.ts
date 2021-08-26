@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { Link } from 'react-router-dom';
 
 export interface Props {
   width?: number;
@@ -47,4 +48,22 @@ const ProductImage = styled.img`
   max-height: 100%;
 `;
 
-export { ProductHeader, Name, Price, Description, ImageCont, ProductImage };
+const ProductLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 16px;
+  width: 100%;
+  box-sizing: border-box;
+`;
+
+export {
+  ProductHeader,
+  Name,
+  Price,
+  Description,
+  ImageCont,
+  ProductImage,
+  ProductLink
+};

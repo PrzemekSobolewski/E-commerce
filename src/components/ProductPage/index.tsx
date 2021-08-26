@@ -7,21 +7,16 @@ import {
   Price,
   Description,
   ImageCont,
-  ProductImage
+  ProductImage,
+  ProductContainer,
+  Content,
+  AddToCartBtn
 } from './style';
 
-interface Product {
-  id: number;
-  name: string;
-  price: any;
-  description: string;
-  media: any;
-}
-
 interface Props {
-  product: Product;
-  permalink: string;
-  match: any;
+  permalink?: string;
+  match?: any;
+  handleAddToCart: any;
 }
 
 const ProductPage: React.FC<Props> = (props) => {
@@ -32,7 +27,6 @@ const ProductPage: React.FC<Props> = (props) => {
     const product = await commerce.products.retrieve(`${permalink}`, {
       type: 'permalink'
     });
-
     setProduct(product);
   };
 
@@ -43,19 +37,21 @@ const ProductPage: React.FC<Props> = (props) => {
   return (
     <>
       {product ? (
-        <div>
-          <ImageCont width={100} height={300}>
+        <ProductContainer>
+          <ImageCont>
             <ProductImage title={product.name} src={product.media.source} />
           </ImageCont>
-
-          <ProductHeader>
-            <Name>{product.name}</Name>
-            <Price>{priceFormatter.format(product.price.raw)}</Price>
-          </ProductHeader>
-          <Description
-            dangerouslySetInnerHTML={{ __html: product.description }}
-          />
-        </div>
+          <Content>
+            <ProductHeader>
+              <Name>{product.name}</Name>
+              <Price>{priceFormatter.format(product.price.raw)}</Price>
+            </ProductHeader>
+            <Description
+              dangerouslySetInnerHTML={{ __html: product.description }}
+            />
+            <AddToCartBtn>Dodaj do koszyka</AddToCartBtn>
+          </Content>
+        </ProductContainer>
       ) : null}
     </>
   );

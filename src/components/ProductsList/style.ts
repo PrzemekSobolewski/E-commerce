@@ -20,7 +20,6 @@ const Flex = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: ${(p: Props) => (p.padding ? p.padding : 8)}px;
   box-shadow: ${(p: Props) =>
     p.shadow
       ? '0 10px 16px 0 rgb(0 0 0 / 0%), 0 6px 20px 0 rgb(0 0 0 / 10%)'
