@@ -7,7 +7,7 @@ export interface Props {
 
 const ProductContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
 `;
 

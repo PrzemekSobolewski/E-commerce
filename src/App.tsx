@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ProductList from './components/ProductsList';
 import ProductPage from './components/ProductPage';
+import Navbar from './components/Navbar';
+import Cart from './components/Cart';
 import { Container } from './style';
 import { Switch, Route } from 'react-router-dom';
 import { commerce } from './lib/commerce';
-import Navbar from './components/Navbar';
+
 
 const App = () => {
   const [cart, setCart] = useState<any>({});
@@ -29,6 +31,13 @@ const App = () => {
       <Container>
         <Switch>
           <Route exact path="/" component={ProductList} />
+          <Route 
+            exact 
+            path="/cart" 
+            render={(props) => (
+              <Cart {...props} cart={cart}/>
+            )} 
+          />
           <Route
             exact
             path="/product/:permalink"

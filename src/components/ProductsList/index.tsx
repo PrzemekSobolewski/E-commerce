@@ -24,7 +24,7 @@ const ProductList: React.FC = () => {
       <Grid gap={24}>
         {products.map((product: Product) => (
           <Flex key={product.id} padding={16} shadow={true}>
-            <Product product={product} />
+            <Product product={product} parent='List'/>
           </Flex>
         ))}
       </Grid>

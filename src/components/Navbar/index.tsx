@@ -17,7 +17,6 @@ interface Props {
 }
 
 const Navbar: React.FC<Props> = ({totalItems}) => {
-  console.log(totalItems)
   return (
     <NavContainer>
       <Container>

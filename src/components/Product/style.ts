@@ -53,11 +53,19 @@ const ProductLink = styled(Link)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 16px;
+  padding: 16px 16px 0 16px;
   width: 100%;
   box-sizing: border-box;
 `;
-
+const ProductDetails = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0px 16px 16px 16px;
+`
 export {
   ProductHeader,
   Name,
@@ -65,5 +73,6 @@ export {
   Description,
   ImageCont,
   ProductImage,
-  ProductLink
+  ProductLink,
+  ProductDetails
 };
